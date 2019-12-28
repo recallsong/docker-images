@@ -1,0 +1,15 @@
+version: '3.6'
+
+services:
+    nginx:
+        image: "nginx:1.14.0-alpine"
+        container_name: nginx
+        restart: unless-stopped
+        hostname: nginx
+        ports:
+            - "80:80"
+            - "443:443"
+        volumes:
+            - $PWD/data/html:/usr/share/nginx/html2:rw
+            - $PWD/data/conf:/etc/nginx/conf.d2:rw
+            - $PWD/data/logs:/var/log/nginx:rw

@@ -5,7 +5,7 @@ services:
         image: "mysql:5.7.22"
         container_name: mysql
         hostname: mysql
-        restart: always
+        restart: unless-stopped
         ports:
           - "3306:3306"
         volumes:
