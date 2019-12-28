@@ -2,7 +2,10 @@ version: '3.6'
 
 services:
     nginx:
-        image: "nginx:1.17.6-alpine"
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: "nginx:1.17.6-alpine-acme"
         container_name: nginx
         restart: unless-stopped
         hostname: nginx
@@ -13,6 +16,12 @@ services:
             - $PWD/data/html:/usr/share/nginx/html:rw
             - $PWD/data/conf:/etc/nginx/conf.d:rw
             - $PWD/data/logs:/var/log/nginx:rw
+            - $PWD/data/acme.sh/${DOMAIN}:/root/.acme.sh/${DOMAIN}:rw
+        environment:
+          - DOMAIN=${DOMAIN}
+          - ACME_CMD="${ACME_CMD}"
+          - Ali_Key=${Ali_Key}
+          - Ali_Secret=${Ali_Secret}
         ulimits:
             memlock:
                 soft: -1

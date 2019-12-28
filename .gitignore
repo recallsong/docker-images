@@ -7,6 +7,9 @@
 
 # data
 nginx/data/logs
+nginx-acme/data/logs
+nginx-acme/data/acme.sh
 redis/data
 mysql/data
 gogs/data
+.env
