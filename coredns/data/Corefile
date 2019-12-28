@@ -1,0 +1,16 @@
+.:53 {
+  bind 0.0.0.0
+  # https://coredns.io/plugins/hosts/
+  hosts {
+    # /etc/hosts and below
+    127.0.0.1 example.org
+    ttl 60
+    reload 1m
+    fallthrough
+  }
+  forward . /etc/resolv.conf
+  cache 120
+  reload 10s
+  log
+  errors
+}
