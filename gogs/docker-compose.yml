@@ -1,0 +1,13 @@
+version: '3.6'
+
+services:
+    gogs:
+        image: "gogs/gogs:0.11.91"
+        container_name: gogs
+        restart: unless-stopped
+        hostname: gogs
+        ports:
+            - "3000:3000"
+            - "3022:22"
+        volumes:
+            - $PWD/data:/data:rw
