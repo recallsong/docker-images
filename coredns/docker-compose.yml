@@ -6,9 +6,10 @@ services:
         container_name: coredns
         restart: unless-stopped
         hostname: coredns
-        ports:
-            - "53:53"
-            - "53:53/udp"
+        # ports:
+        #     - "53:53"
+        #     - "53:53/udp"
+        network_mode: host
         volumes:
             - /etc/resolv.conf:/etc/resolv.conf:ro
             - $PWD/data:/etc/coredns:rw
