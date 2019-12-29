@@ -2,10 +2,10 @@ version: '3.6'
 
 services:
     nginx:
-        build:
-            context: .
-            dockerfile: Dockerfile
-        image: "nginx:1.17.6-alpine-acme"
+        # build:
+        #     context: .
+        #     dockerfile: Dockerfile
+        image: "recallsong/nginx-acme:1.17.6-alpine"
         container_name: nginx
         restart: unless-stopped
         hostname: nginx
