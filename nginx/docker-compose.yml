@@ -11,7 +11,7 @@ services:
             - "443:443"
         volumes:
             - $PWD/data/html:/usr/share/nginx/html:rw
-            - $PWD/data/conf:/etc/nginx/conf.d:rw
+            - $PWD/data/conf/conf.d:/etc/nginx/conf.d:rw
             - $PWD/data/logs:/var/log/nginx:rw
         ulimits:
             memlock:

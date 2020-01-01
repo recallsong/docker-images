@@ -1,0 +1,11 @@
+version: '3.6'
+
+services:
+    frps:
+        image: "cloverzrg/frps-docker:0.30.0"
+        container_name: frps
+        restart: unless-stopped
+        hostname: frps
+        network_mode: host
+        volumes:
+            - $PWD/data:/conf:rw

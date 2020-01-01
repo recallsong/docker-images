@@ -9,7 +9,10 @@
 nginx/data/logs
 nginx-acme/data/logs
 nginx-acme/data/acme.sh
+nginx-acme/data/conf/ssl
 redis/data
 mysql/data
 gogs/data
+frps/data
+frpc/data
 .env

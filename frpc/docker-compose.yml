@@ -1,0 +1,11 @@
+version: '3.6'
+
+services:
+    frpc:
+        image: "cloverzrg/frpc-docker:0.30.0"
+        container_name: frpc
+        restart: unless-stopped
+        hostname: frpc
+        network_mode: host
+        volumes:
+            - $PWD/data:/conf:rw
