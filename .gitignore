@@ -7,9 +7,11 @@
 
 # data
 nginx/data/logs
+nginx/data/html
 nginx-acme/data/logs
 nginx-acme/data/acme.sh
 nginx-acme/data/conf/ssl
+nginx-acme/data/html
 redis/data
 mysql/data
 gogs/data
